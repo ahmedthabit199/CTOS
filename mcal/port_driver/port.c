@@ -38,14 +38,8 @@ void port_init(void)
             PORT_Addr = &PORTE_REG;
             break;
         case PortF:
-						//SYSCTL_RCGC2 |= 0x20;   // enable clock to GPIOF
             PORT_Addr = &PORTF_REG;
-						PORT_Addr->GPIOLOCK = 0x4C4F434B;     
-						PORT_Addr->GPIOCR =0x1F; //allow changes to PF4-0 /* make PORTF0 configurable */
-            PORT_Addr->GPIOAMSEL = 0x00;        // 3) disable analog on PF
-						//PORT_Addr->GPIOAFSEL = 0x00;        // 6) disable alt funct on PF7-0
-						PORT_Addr->GPIOPCTL = 0x00000000;   // 4) PCTL GPIO on PF4-0
-						PORT_Addr->GPIOPUR = 0x11; 
+						
 						
 						break;
         }
@@ -53,8 +47,11 @@ void port_init(void)
 				//if((PortId==PortF) &&(ChId==38 ) ){
 				
 					//PORT_Addr->GPIOLOCK = 0x4C4F434B;     /* unlock commit register */     /* unlock commit register */
-					//PORT_Addr->GPIOCR =0x1F; //allow changes to PF4-0 /* make PORTF0 configurable */
-					
+						//PORT_Addr->GPIOCR =0x1F; //allow changes to PF4-0 /* make PORTF0 configurable */
+            //PORT_Addr->GPIOAMSEL = 0x00;        // 3) disable analog on PF
+						//PORT_Addr->GPIOAFSEL = 0x00;        // 6) disable alt funct on PF7-0
+						//PORT_Addr->GPIOPCTL = 0x00000000;   // 4) PCTL GPIO on PF4-0
+						//PORT_Addr->GPIOPUR = 0x11; 
 				//}
 				
 				
