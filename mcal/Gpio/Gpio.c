@@ -111,3 +111,40 @@ void Gpio_FlipChannel( Gpio_PinType Pin)
 
 
 
+
+STD_levelType Gpio_ReadChannel(Gpio_PinType Pin){
+	
+		STD_levelType value;
+    Gpio_PortType PortId = Pin / 8;
+    Gpio_PinType Ch = Pin % 8;
+    switch(PortId)
+    {
+		case PortF:
+        value = (PORTF_REG.GPIODATA >> Ch) & (uint32)0x01;
+        break;	
+    case PortA:
+        value = (PORTA_REG.GPIODATA >> Ch) & (uint32)0x01;
+        break;
+
+    case PortB:
+        value = (PORTB_REG.GPIODATA >> Ch) & (uint32)0x01;
+        break;
+
+    case PortC:
+        value = (PORTC_REG.GPIODATA >> Ch) & (uint32)0x01;
+        break;
+    case PortD:
+        value = (PORTD_REG.GPIODATA >> Ch) & (uint32)0x01;
+        break;
+    case PortE:
+        value = (PORTE_REG.GPIODATA >> Ch) & (uint32)0x01;
+        break;
+
+    default:
+        
+        value = 2;
+        break;
+    }
+    return value;
+
+}

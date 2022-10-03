@@ -6,6 +6,6 @@
 
 void Gpio_WriteChannel(Gpio_PinType Pin, STD_levelType Level);
 void Gpio_FlipChannel( Gpio_PinType Pin);
-
+STD_levelType Gpio_ReadChannel(Gpio_PinType Pin);
 
 #endif 

@@ -65,6 +65,20 @@ typedef struct
 
 	
 
+typedef struct
+{
+    uint32 R0:1;
+    uint32 R1:1;
+    uint32 R2:1;
+    uint32 R3:1;
+    uint32 R4:1;
+    uint32 R5:1;
+    uint32 R6:1;
+    uint32 R7:1;
+}RCGC2_TagType;
+#define RCGC2    (*((volatile RCGC2_TagType*)0x400FE108))
+
+
 
 
 typedef struct

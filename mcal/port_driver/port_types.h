@@ -97,13 +97,21 @@ typedef enum
 }Port_CurrType;
 
 
+typedef enum
+{
+    Unlocked,
+    locked
+}Port_LockType;
+
+
 typedef struct
 {
-    Port_Type               Channel;
+    Port_ChIdType           Channel;
     Port_DirType            Dir;
     uint8                   Mode;
     InterfaceType           InterfaceResType;
     Port_CurrType           CurrentDrive;
+		Port_LockType           LockStatus;
 }Port_CfgType;
 
 #endif
