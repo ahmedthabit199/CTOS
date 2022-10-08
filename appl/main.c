@@ -3,6 +3,7 @@
 #include "port.h"
 #include "Gpio.h"
 #include "SysTick_cfg.h"
+#include "nvic_cfg.h"
 
 uint8 flage=0;
 uint8 setOnflage=0;
@@ -30,7 +31,7 @@ int main()
 	
 	
 	SysCtr_init();
-	
+	NVIC_init();
 	counter=offTime;   
 	
 	
